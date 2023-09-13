@@ -1,13 +1,13 @@
-import app from './app';
-import { AppDataSource } from './data-source';
+import app from "./app";
+import { AppDataSource } from "./data-source";
 
 AppDataSource.initialize()
-  .then((): void => {
-    console.log('Server is running');
-
-    const PORT: number = Number(process.env.PORT) || 3000;
-    app.listen(PORT, () => console.log('Servidor executando'));
+  .then(() => {
+    console.log("Server is running");
+    app.listen(3000, () => {
+      console.log("Servidor executando");
+    });
   })
-  .catch((err: unknown): void => {
-    console.error('Error during Data Source initialization', err);
+  .catch((err: any) => {
+    console.error("Error during Data Source initialization", err);
   });
